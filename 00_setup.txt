@@ -1,5 +1,0 @@
-Set Up MinGW
-
-in terminal run
-gcc <filename>
-./a.exe
