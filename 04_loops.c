@@ -1,38 +1,57 @@
-// Loops in C
-
-#include <stdio.h>  // Standard I/O library
+#include <stdio.h>
 
 int main() {
-    int num, i = 1;
+    int i;
 
-    // Taking input from the user
-    printf("Enter a positive integer: ");
+    // 1. for loop - print 1 to 5
+    printf("For loop example (1 to 5):\n");
+    for (i = 1; i <= 5; i++) {
+        printf("%d ", i);
+    }
+    printf("\n");
+
+    // 2. while loop - sum of numbers until user enters 0
+    int num, sum = 0;
+    printf("\nWhile loop example (sum until 0):\n");
+    printf("Enter numbers (0 to stop):\n");
     scanf("%d", &num);
-
-    // Using a for loop to print numbers from 1 to num
-    printf("\n--- Using for loop ---\n");
-    for (i = 1; i <= num; i++) {
-        printf("%d ", i);
+    while (num != 0) {
+        sum += num;
+        scanf("%d", &num);
     }
-    printf("\n");
+    printf("Sum = %d\n", sum);
 
-    // Using a while loop to print numbers from num to 1
-    printf("\n--- Using while loop ---\n");
-    i = num;  // Reset i
-    while (i >= 1) {
-        printf("%d ", i);
-        i--;  // Decrement i
-    }
-    printf("\n");
-
-    // Using a do-while loop to print the number at least once
-    printf("\n--- Using do-while loop ---\n");
-    i = num;  // Reset i
+    // 3. do-while loop - runs at least once
+    int password;
+    printf("\nDo-while loop example (password check):\n");
     do {
+        printf("Enter password (1234 to unlock): ");
+        scanf("%d", &password);
+    } while (password != 1234);
+    printf("Access granted!\n");
+
+    // 4. Nested loops - multiplication table
+    printf("\nNested loops example (multiplication table 1 to 3):\n");
+    for (int row = 1; row <= 3; row++) {
+        for (int col = 1; col <= 3; col++) {
+            printf("%d\t", row * col);
+        }
+        printf("\n");
+    }
+
+    // 5. break and continue
+    printf("\nBreak and Continue example:\n");
+    for (i = 1; i <= 10; i++) {
+        if (i == 5) {
+            printf("Breaking at i = %d\n", i);
+            break; // stop loop completely
+        }
+        if (i % 2 == 0) {
+            continue; // skip even numbers
+        }
         printf("%d ", i);
-        i--;
-    } while (i >= 1);
+    }
     printf("\n");
 
-    return 0;  // Successful execution
+    return 0;
 }
