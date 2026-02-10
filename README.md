@@ -1,70 +1,125 @@
 # Learning C Programming 🚀
 
-This repository contains C programs covering fundamental concepts like I/O, operators, loops, arrays, functions, recursion, and data structures.
+A structured repository covering **C programming fundamentals to core data structures and algorithms**, implemented through well-organized and progressively designed programs.
+
+This repository is intended for beginners and intermediate learners who want strong clarity in **C syntax, logic building, and problem-solving using C**.
 
 ---
 
 ## 📌 Prerequisites
+
 Before running these programs, ensure you have:
-- A **C compiler** installed (**GCC** recommended).
-- A **command-line terminal** (Linux/macOS) or **Command Prompt/PowerShell** (Windows).
+
+* A **C compiler** installed (**GCC recommended**)
+* A **command-line terminal**
+
+  * Linux/macOS → Terminal
+  * Windows → Command Prompt / PowerShell / VS Code terminal
 
 ---
 
 ## 📥 Installation & Setup
-### **🔹 Clone this repository**
+
+### 🔹 Clone the Repository
+
 ```sh
 git clone https://github.com/AdityaSah2030/LearningCProgramming.git
 cd LearningCProgramming
 ```
 
-### **🔹 Compile a C Program**
+### 🔹 Compile a Program
+
+Example:
+
 ```sh
-gcc 01_basicIO.c -o basicIO
+gcc 01_Input_Output_DataTypes.c -o program
 ```
 
-### **🔹 Run the Program**
-```sh
-# For Linux/macOS
-./basicIO
+### 🔹 Run the Program
 
-# For Windows
-basicIO.exe
+**Linux/macOS**
+
+```sh
+./program
+```
+
+**Windows**
+
+```sh
+program.exe
 ```
 
 ---
 
-## 📂 Program List
-| No. | File Name             | Concept Covered       |
-|---- |--------------------- |----------------------|
-| 01  | `01_basicIO.c`       | Basic Input/Output   |
-| 02  | `02_operators.c`     | Operators in C       |
-| 03  | `03_conditional.c`   | Conditional Statements |
-| 04  | `04_loops.c`         | Loops (for, while, do-while) |
-| 05  | `05_array.c`         | Arrays in C |
-| 06  | `06_string.c`        | Strings in C |
-| 07  | `07_functions.c`     | Functions |
-| 08  | `08_pointers.c`      | Pointers |
-| 09  | `09_preprocessor.c`  | Preprocessor Directives |
-| 10  | `10_bitwise.c`       | Bitwise Operations |
-| 11  | `11_linkedList.c`    | Linked List Implementation |
-| 12  | `12_recursion.c`     | Recursion |
-| 13  | `13_binarySearch.c`  | Binary Search |
-| 14  | `14_bubbleSort.c`    | Bubble Sort |
-| 15  | `15_quickSort.c`     | Quick Sort |
-| 16  | `16_stack.c`         | Stack Data Structure |
-| 17  | `17_queue.c`         | Queue Data Structure |
-| 18  | `18_matrixMultiplication.c` | Matrix Multiplication |
-| 19  | `19_unions.c`        | Unions in C |
+## 📂 Repository Structure
+
+### 🔹 01_Basics
+
+Fundamental C programming concepts.
+
+| No. | File Name                             | Concepts Covered                 |
+| --- | ------------------------------------- | -------------------------------- |
+| 01  | `01_Input_Output_DataTypes.c`         | Input/Output & Data Types        |
+| 02  | `02_HeaderFiles_Operators.c`          | Header Files & Operators         |
+| 03  | `03_Conditionals.c`                   | Conditional Statements           |
+| 04  | `04_Loops.c`                          | Loops                            |
+| 05  | `05_Strings_Arrays.c`                 | Arrays & Strings                 |
+| 06  | `06_Functions_Macros_Preprocessors.c` | Functions, Macros, Preprocessors |
+| 07  | `07_Recursion.c`                      | Recursion                        |
+| 08  | `08_Pointers_DoublePointers.c`        | Pointers & Double Pointers       |
+| 09  | `09_Unions.c`                         | Unions                           |
+| 10  | `10_Matrix_Multiplication.c`          | Matrix Operations                |
 
 ---
 
-## 🛠️ Future Improvements
-- ✅ Add **Makefile** for easy compilation.
-- ✅ Add **test cases** for each program.
-- ✅ Include **comments** explaining complex parts.
+### 🔹 02_Data_Structures
+
+Core data structures and sorting/searching algorithms implemented in C.
+
+| No. | File Name                       | Concepts Covered           |
+| --- | ------------------------------- | -------------------------- |
+| 01  | `01_Stack.c`                    | Stack                      |
+| 02  | `02_Queue.c`                    | Queue                      |
+| 03  | `03_Priority_Queue.c`           | Priority Queue             |
+| 04  | `04_Circular_Queue.c`           | Circular Queue             |
+| 05  | `05_Infix_Postfix.c`            | Expression Conversion      |
+| 06  | `06_Singly_Linked_List.c`       | Singly Linked List         |
+| 07  | `07_Doubly_Linked_List.c`       | Doubly Linked List         |
+| 08  | `08_Circular_Linked_List.c`     | Circular Linked List       |
+| 09  | `09_Binary_Search_Iteration.c`  | Binary Search (Iterative)  |
+| 10  | `10_Binary_Search_Recursion.c`  | Binary Search (Recursive)  |
+| 11  | `11_Selection_Sort_Iteration.c` | Selection Sort (Iterative) |
+| 12  | `12_Selection_Sort_Recursion.c` | Selection Sort (Recursive) |
+| 13  | `13_Bubble_Sort_Iteration.c`    | Bubble Sort (Iterative)    |
+| 14  | `14_Bubble_Sort_Recursion.c`    | Bubble Sort (Recursive)    |
+| 15  | `15_Insertion_Sort_Iteration.c` | Insertion Sort (Iterative) |
+| 16  | `16_Insertion_Sort_Recursion.c` | Insertion Sort (Recursive) |
+| 17  | `17_Quick_Sort.c`               | Quick Sort                 |
+| 18  | `18_Merge_Sort.c`               | Merge Sort                 |
+
+---
+
+## 🎯 Purpose of This Repository
+
+* Strengthen C programming fundamentals
+* Build strong logic and problem-solving skills
+* Prepare for **Data Structures & Algorithms**
+* Create a complete C reference for revision and practice
 
 ---
 
 ## 💡 Contribution
-Feel free to submit **pull requests** or report issues to improve this repository! 😊
+
+Contributions are welcome.
+
+If you find bugs, want to improve code readability, or add new implementations:
+
+* Fork the repository
+* Create a new branch
+* Submit a pull request
+
+---
+
+## 🔮 Future Scope
+
+Future updates will include **Design and Analysis of Algorithms (DAA)** implementations and structured additions to this repository.
