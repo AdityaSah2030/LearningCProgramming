@@ -1,4 +1,4 @@
-// Merge Sort in C (Using Recursion)
+// Merge Sort
 
 #include <stdio.h>
 

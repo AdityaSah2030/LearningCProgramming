@@ -1,4 +1,4 @@
-// Quick Sort
+// Quick Sort (using first element as pivot)
 
 #include <stdio.h>
 
@@ -9,32 +9,42 @@ void swap(int *a, int *b) {
     *b = temp;
 }
 
-// Partition function to place pivot at correct position
+// Partition function (first element as pivot)
 int partition(int arr[], int low, int high) {
-    int pivot = arr[high];   // Choose last element as pivot
-    int i = low - 1;
+    int pivot = arr[low];     // First element as pivot
+    int i = low + 1;
+    int j = high;
 
-    // Rearrange elements based on pivot
-    for (int j = low; j < high; j++) {
-        if (arr[j] < pivot) {
+    while (1) {
+
+        // move i forward while elements are smaller than pivot
+        while (i <= high && arr[i] <= pivot)
             i++;
+
+        // move j backward while elements are greater than pivot
+        while (arr[j] > pivot)
+            j--;
+
+        if (i < j) {
             swap(&arr[i], &arr[j]);
+        } 
+        else {
+            break;
         }
     }
 
-    // Place pivot in correct position
-    swap(&arr[i + 1], &arr[high]);
-    return i + 1;
+    // place pivot at correct position
+    swap(&arr[low], &arr[j]);
+    return j;
 }
 
 // Quick sort function
 void quickSort(int arr[], int low, int high) {
     if (low < high) {
-        int pi = partition(arr, low, high);  // Get pivot index
+        int pi = partition(arr, low, high);
 
-        // Recursively sort left and right subarrays
-        quickSort(arr, low, pi - 1);
-        quickSort(arr, pi + 1, high);
+        quickSort(arr, low, pi - 1);   // left part
+        quickSort(arr, pi + 1, high);  // right part
     }
 }
 
@@ -50,11 +60,10 @@ int main() {
 
     quickSort(arr, 0, n - 1);
 
-    printf("Sorted array using Quick Sort:\n");
+    printf("Sorted array using Quick Sort (first element pivot):\n");
     for (int i = 0; i < n; i++)
         printf("%d ", arr[i]);
 
     printf("\n");
-
     return 0;
 }

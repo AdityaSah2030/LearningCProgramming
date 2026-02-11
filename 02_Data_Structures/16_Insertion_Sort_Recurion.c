@@ -2,26 +2,24 @@
 
 #include <stdio.h>
 
-// Recursive insertion sort function
-void insertionSort(int arr[], int n) {
+// Recursive insertion sort
+void insertionSort(int arr[], int n, int index) {
 
-    // Base case
-    if (n <= 1)
+    if (index == n)      // Base case: reached end of array
         return;
 
-    // Sort first n-1 elements
-    insertionSort(arr, n - 1);
+    int key = arr[index];
+    int j = index - 1;
 
-    // Insert last element at correct position
-    int key = arr[n - 1];
-    int j = n - 2;
-
+    // shift elements greater than key
     while (j >= 0 && arr[j] > key) {
         arr[j + 1] = arr[j];
         j--;
     }
 
-    arr[j + 1] = key;
+    arr[j + 1] = key;    // insert at correct position
+
+    insertionSort(arr, n, index + 1);   // move to next element
 }
 
 int main() {
@@ -34,13 +32,12 @@ int main() {
     for (int i = 0; i < n; i++)
         scanf("%d", &arr[i]);
 
-    insertionSort(arr, n);
+    insertionSort(arr, n, 1);   // start from 2nd element
 
     printf("Sorted array using Recursive Insertion Sort:\n");
     for (int i = 0; i < n; i++)
         printf("%d ", arr[i]);
 
     printf("\n");
-
     return 0;
 }
