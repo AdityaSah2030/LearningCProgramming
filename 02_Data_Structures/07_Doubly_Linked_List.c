@@ -1,18 +1,18 @@
-// Doubly Linked List with All Operations
+// Doubly Linked List
 
 #include <stdio.h>
 #include <stdlib.h>
 
-// Structure for node
-struct Node {
+// Structure for node using typedef
+typedef struct Node {
     int data;
     struct Node *prev;
     struct Node *next;
-};
+} Node;
 
 // Insert at beginning
-void insertAtBeginning(struct Node **head, int value) {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+void insertAtBeginning(Node **head, int value) {
+    Node *newNode = (Node *)malloc(sizeof(Node));
     newNode->data = value;
     newNode->prev = NULL;
     newNode->next = *head;
@@ -25,8 +25,8 @@ void insertAtBeginning(struct Node **head, int value) {
 }
 
 // Insert at end
-void insertAtEnd(struct Node **head, int value) {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+void insertAtEnd(Node **head, int value) {
+    Node *newNode = (Node *)malloc(sizeof(Node));
     newNode->data = value;
     newNode->next = NULL;
 
@@ -37,7 +37,7 @@ void insertAtEnd(struct Node **head, int value) {
         return;
     }
 
-    struct Node *temp = *head;
+    Node *temp = *head;
     while (temp->next != NULL)
         temp = temp->next;
 
@@ -48,8 +48,8 @@ void insertAtEnd(struct Node **head, int value) {
 }
 
 // Insert at position
-void insertAtPosition(struct Node **head, int value, int pos) {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+void insertAtPosition(Node **head, int value, int pos) {
+    Node *newNode = (Node *)malloc(sizeof(Node));
     newNode->data = value;
 
     if (pos == 1) {
@@ -64,7 +64,7 @@ void insertAtPosition(struct Node **head, int value, int pos) {
         return;
     }
 
-    struct Node *temp = *head;
+    Node *temp = *head;
     for (int i = 1; i < pos - 1 && temp != NULL; i++)
         temp = temp->next;
 
@@ -86,13 +86,13 @@ void insertAtPosition(struct Node **head, int value, int pos) {
 }
 
 // Delete from beginning
-void deleteFromBeginning(struct Node **head) {
+void deleteFromBeginning(Node **head) {
     if (*head == NULL) {
         printf("List is empty.\n");
         return;
     }
 
-    struct Node *temp = *head;
+    Node *temp = *head;
     printf("%d deleted from beginning.\n", temp->data);
 
     *head = temp->next;
@@ -104,13 +104,13 @@ void deleteFromBeginning(struct Node **head) {
 }
 
 // Delete from end
-void deleteFromEnd(struct Node **head) {
+void deleteFromEnd(Node **head) {
     if (*head == NULL) {
         printf("List is empty.\n");
         return;
     }
 
-    struct Node *temp = *head;
+    Node *temp = *head;
 
     if (temp->next == NULL) {
         printf("%d deleted from end.\n", temp->data);
@@ -128,13 +128,13 @@ void deleteFromEnd(struct Node **head) {
 }
 
 // Delete from position
-void deleteFromPosition(struct Node **head, int pos) {
+void deleteFromPosition(Node **head, int pos) {
     if (*head == NULL) {
         printf("List is empty.\n");
         return;
     }
 
-    struct Node *temp = *head;
+    Node *temp = *head;
 
     if (pos == 1) {
         printf("%d deleted from position %d.\n", temp->data, pos);
@@ -167,7 +167,7 @@ void deleteFromPosition(struct Node **head, int pos) {
 }
 
 // Display list forward
-void displayForward(struct Node *head) {
+void displayForward(Node *head) {
     if (head == NULL) {
         printf("List is empty.\n");
         return;
@@ -182,7 +182,7 @@ void displayForward(struct Node *head) {
 }
 
 // Display list backward
-void displayBackward(struct Node *head) {
+void displayBackward(Node *head) {
     if (head == NULL) {
         printf("List is empty.\n");
         return;
@@ -200,7 +200,7 @@ void displayBackward(struct Node *head) {
 }
 
 int main() {
-    struct Node *head = NULL;
+    Node *head = NULL;
 
     insertAtBeginning(&head, 20);
     insertAtBeginning(&head, 10);

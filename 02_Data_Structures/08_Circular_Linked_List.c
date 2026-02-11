@@ -1,17 +1,17 @@
-// Circular Singly Linked List with All Operations
+// Circular Singly Linked List
 
 #include <stdio.h>
 #include <stdlib.h>
 
-// Structure for node
-struct Node {
+// Structure for node using typedef
+typedef struct Node {
     int data;
     struct Node *next;
-};
+} Node;
 
 // Insert at beginning
-void insertAtBeginning(struct Node **head, int value) {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+void insertAtBeginning(Node **head, int value) {
+    Node *newNode = (Node *)malloc(sizeof(Node));
     newNode->data = value;
 
     if (*head == NULL) {
@@ -19,7 +19,7 @@ void insertAtBeginning(struct Node **head, int value) {
         *head = newNode;
     } 
     else {
-        struct Node *temp = *head;
+        Node *temp = *head;
         while (temp->next != *head)
             temp = temp->next;
 
@@ -32,8 +32,8 @@ void insertAtBeginning(struct Node **head, int value) {
 }
 
 // Insert at end
-void insertAtEnd(struct Node **head, int value) {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+void insertAtEnd(Node **head, int value) {
+    Node *newNode = (Node *)malloc(sizeof(Node));
     newNode->data = value;
 
     if (*head == NULL) {
@@ -41,7 +41,7 @@ void insertAtEnd(struct Node **head, int value) {
         *head = newNode;
     } 
     else {
-        struct Node *temp = *head;
+        Node *temp = *head;
         while (temp->next != *head)
             temp = temp->next;
 
@@ -53,8 +53,8 @@ void insertAtEnd(struct Node **head, int value) {
 }
 
 // Insert at position
-void insertAtPosition(struct Node **head, int value, int pos) {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+void insertAtPosition(Node **head, int value, int pos) {
+    Node *newNode = (Node *)malloc(sizeof(Node));
     newNode->data = value;
 
     if (pos == 1) {
@@ -63,7 +63,7 @@ void insertAtPosition(struct Node **head, int value, int pos) {
         return;
     }
 
-    struct Node *temp = *head;
+    Node *temp = *head;
     for (int i = 1; i < pos - 1 && temp->next != *head; i++)
         temp = temp->next;
 
@@ -74,13 +74,13 @@ void insertAtPosition(struct Node **head, int value, int pos) {
 }
 
 // Delete from beginning
-void deleteFromBeginning(struct Node **head) {
+void deleteFromBeginning(Node **head) {
     if (*head == NULL) {
         printf("List is empty.\n");
         return;
     }
 
-    struct Node *temp = *head;
+    Node *temp = *head;
 
     if (temp->next == *head) {
         printf("%d deleted from beginning.\n", temp->data);
@@ -89,7 +89,7 @@ void deleteFromBeginning(struct Node **head) {
         return;
     }
 
-    struct Node *last = *head;
+    Node *last = *head;
     while (last->next != *head)
         last = last->next;
 
@@ -100,13 +100,13 @@ void deleteFromBeginning(struct Node **head) {
 }
 
 // Delete from end
-void deleteFromEnd(struct Node **head) {
+void deleteFromEnd(Node **head) {
     if (*head == NULL) {
         printf("List is empty.\n");
         return;
     }
 
-    struct Node *temp = *head;
+    Node *temp = *head;
 
     if (temp->next == *head) {
         printf("%d deleted from end.\n", temp->data);
@@ -124,7 +124,7 @@ void deleteFromEnd(struct Node **head) {
 }
 
 // Delete from position
-void deleteFromPosition(struct Node **head, int pos) {
+void deleteFromPosition(Node **head, int pos) {
     if (*head == NULL) {
         printf("List is empty.\n");
         return;
@@ -135,11 +135,11 @@ void deleteFromPosition(struct Node **head, int pos) {
         return;
     }
 
-    struct Node *temp = *head;
+    Node *temp = *head;
     for (int i = 1; i < pos - 1 && temp->next != *head; i++)
         temp = temp->next;
 
-    struct Node *del = temp->next;
+    Node *del = temp->next;
 
     if (del == *head) {
         printf("Invalid position!\n");
@@ -152,13 +152,13 @@ void deleteFromPosition(struct Node **head, int pos) {
 }
 
 // Display circular list
-void displayList(struct Node *head) {
+void displayList(Node *head) {
     if (head == NULL) {
         printf("List is empty.\n");
         return;
     }
 
-    struct Node *temp = head;
+    Node *temp = head;
     printf("Circular Linked List: ");
 
     do {
@@ -170,7 +170,7 @@ void displayList(struct Node *head) {
 }
 
 int main() {
-    struct Node *head = NULL;
+    Node *head = NULL;
 
     insertAtBeginning(&head, 30);
     insertAtBeginning(&head, 10);
