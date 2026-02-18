@@ -12,7 +12,6 @@ Before running these programs, ensure you have:
 
 * A **C compiler** installed (**GCC recommended**)
 * A **command-line terminal**
-
   * Linux/macOS → Terminal
   * Windows → Command Prompt / PowerShell / VS Code terminal
 
@@ -108,18 +107,48 @@ Core data structures and sorting/searching algorithms implemented in C.
 
 ---
 
-## 💡 Contribution
+## 💡 Contributing
 
-Contributions are welcome.
+Contributions are welcome!
 
 If you find bugs, want to improve code readability, or add new implementations:
 
-* Fork the repository
-* Create a new branch
-* Submit a pull request
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/YourFeature`)
+3. **Commit** your changes (`git commit -m 'Add YourFeature'`)
+4. **Push** to the branch (`git push origin feature/YourFeature`)
+5. **Open** a Pull Request
+
+---
+
+## 📝 License
+
+This project is open source and available for educational purposes.
 
 ---
 
 ## 🔮 Future Scope
 
-Future updates will include **Design and Analysis of Algorithms (DAA)** implementations and structured additions to this repository.
+Future updates will include:
+- **Design and Analysis of Algorithms (DAA)** implementations
+- Advanced data structures (Trees, Graphs, Heaps)
+- Dynamic programming problems
+- Additional algorithm optimizations
+
+---
+
+## 📧 Contact
+
+**Aditya Sah** - [@AdityaSah2030](https://github.com/AdityaSah2030)
+
+Project Link: [https://github.com/AdityaSah2030/LearningCProgramming](https://github.com/AdityaSah2030/LearningCProgramming)
+
+---
+
+<div align="center">
+
+### ⭐ If you found this project helpful, please give it a star!
+
+Made with ❤️ and C
+
+</div>
