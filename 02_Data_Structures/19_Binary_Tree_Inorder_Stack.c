@@ -6,15 +6,15 @@
 #define MAX 100
 
 // Structure for tree node
-struct Node {
+typedef struct Node {
     int data;
     struct Node *left;
     struct Node *right;
-};
+} Node;
 
 // Function to create new node
-struct Node* createNode(int value) {
-    struct Node *newNode = (struct Node*)malloc(sizeof(struct Node));
+Node* createNode(int value) {
+    Node *newNode = (Node*)malloc(sizeof(Node));
     newNode->data = value;
     newNode->left = NULL;
     newNode->right = NULL;
@@ -22,12 +22,12 @@ struct Node* createNode(int value) {
 }
 
 // Inorder traversal without recursion
-void inorder(struct Node *root) {
+void inorder(Node *root) {
 
-    struct Node *stack[MAX];
+    Node *stack[MAX];
     int top = -1;
 
-    struct Node *current = root;
+    Node *current = root;
 
     while (current != NULL || top != -1) {
 
@@ -51,7 +51,7 @@ void inorder(struct Node *root) {
 int main() {
 
     // Creating a sample tree
-    struct Node *root = createNode(10);
+    Node *root = createNode(10);
     root->left = createNode(20);
     root->right = createNode(30);
     root->left->left = createNode(40);
